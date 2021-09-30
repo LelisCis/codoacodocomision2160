@@ -23,6 +23,8 @@ function calcular(){
         resultado = num * num2;
         elemento.innerHTML+="<p> El resultado de la multiplicación de "+num+" y "+num2+" es: "+
         resultado+"</p>";
+    }else{
+        elemento.innerHTML+="El valor para la operación es incorrecto!"
     }
     
 }
