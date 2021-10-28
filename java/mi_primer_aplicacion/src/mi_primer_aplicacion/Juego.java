@@ -1,7 +1,5 @@
 
 package mi_primer_aplicacion;
-
-
 public class Juego {
 
     public int getPuntos() {
