@@ -7,12 +7,12 @@ import java.util.logging.Logger;
 
 
 public class Conexion {
-    public String driver = "com.mysql.jdbc.Driver";
+    public String driver = "com.mysql.cj.jdbc.Driver";
     public Connection getConection(){
         Connection conexion=null;
         try{
             Class.forName(driver);
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/codoacodo",
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/comision2160",
                     "luis","123456");
         }catch(SQLException e){
             System.out.println(e.toString());
@@ -25,6 +25,22 @@ public class Conexion {
         Connection conexion =null;
         Conexion con = new Conexion();
         conexion = con.getConection();
-        System.out.println("Hola");
+        PreparedStatement ps;
+        ResultSet rs;
+        
+        ps = conexion.prepareStatement("SELECT * FROM participantes");
+        rs = ps.executeQuery();
+        while(rs.next()){
+            int id =rs.getInt("id");
+            String nombre = rs.getString("nombres");
+            String apellido = rs.getString("apellidos");
+            String email =rs.getString("email");
+            int telefono = rs.getInt("telefono");
+                    
+            System.out.println("id: " + id + "\n nombre: " +nombre +
+                    "\n Apellido: " + apellido +"\n Email: "+email + 
+                    "\n Telefono: "+  telefono);
+        }
+        
     }
 }
