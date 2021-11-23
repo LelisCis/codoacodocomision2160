@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%! int num =89; double num2 = 34.8;
+        <%! int num =189; double num2 = 34.8;
         double suma(){
             return num+num2;
         }

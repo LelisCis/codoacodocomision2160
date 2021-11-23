@@ -17,11 +17,14 @@ public class Clase3Java {
         it.setSueldo(250000);
         System.out.println("Nombre: "+ it.nombre );
         System.out.println(it.getSueldo());
-        Departamento legales = new Departamento("Lucrecia","Casas","Calle 32",25,"Legales");
+        Departamento legales = new Departamento("Lucrecia","Casas","Calle 32",25,
+                "Legales");
         legales.setSueldo(250000);
         System.out.println(legales.mostrarDatos());
-        Finanzas juana = new Finanzas("Juana","Diaz","Calle 250",26,"Desarrollo","gerente");
-        System.out.println("Le a bonamos el sueldo a: "+ juana.nombre + " por la cantidad de: "+
+        Finanzas juana = new Finanzas("Juana","Diaz","Calle 250",26,"Desarrollo",
+                "gerente");
+        System.out.println("Le a bonamos el sueldo a: "+ juana.nombre + 
+                " por la cantidad de: "+
                juana.ABonarSueldo() + " pesos" );
         
     }

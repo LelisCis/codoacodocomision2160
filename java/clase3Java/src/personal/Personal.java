@@ -13,7 +13,8 @@ public class Personal {
         this.sueldo=nuevoSueldo;
     }
 
-    public Personal(String nombre, String apellido, String domicilio, int edad) {
+    public Personal(String nombre, String apellido, String domicilio, 
+            int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.domicilio = domicilio;

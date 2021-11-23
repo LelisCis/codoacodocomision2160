@@ -5,7 +5,8 @@ import personal.Personal;
 
 
 public class Departamento extends Personal{
-    public Departamento(String nombre, String apellido, String domicilio, int edad, String depto){
+    public Departamento(String nombre, String apellido, String domicilio, 
+            int edad, String depto){
         super(nombre,apellido,domicilio,edad);
     }
     public String mostrarDatos(){

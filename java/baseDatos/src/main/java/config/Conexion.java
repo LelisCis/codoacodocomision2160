@@ -22,7 +22,7 @@ public class Conexion {
         return conexion;
     }
     public static void main(String [] args) throws SQLException, ClassNotFoundException{
-        Connection conexion =null;
+        Connection conexion = null;
         Conexion con = new Conexion();
         conexion = con.getConection();
         PreparedStatement ps;
