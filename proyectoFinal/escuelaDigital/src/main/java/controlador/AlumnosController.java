@@ -41,7 +41,25 @@ public class AlumnosController extends HttpServlet {
                 alumnosDao.actualizarAlumno(alumno);
                 dispatcher = request.getRequestDispatcher(
                         "Vistas/alumnos.jsp");
-            }
+            }else if(accion.equals("nuevo")){
+              dispatcher = request.getRequestDispatcher(
+                        "Vistas/nuevo.jsp");
+            }else if(accion.equals("insert")){
+                String nombre = request.getParameter("nombre");
+                String apellido = request.getParameter("apellido");
+                String email = request.getParameter("email");
+                String telefono = request.getParameter("telefono");
+                int tl = Integer.parseInt(telefono);
+                Alumnos alumno = new Alumnos(0,nombre,apellido,email,tl);
+                alumnosDao.insertarAlumno(alumno);
+                dispatcher = request.getRequestDispatcher(
+                        "Vistas/alumnos.jsp");
+            }else if(accion.equals("eliminar")){
+                int id = Integer.parseInt(request.getParameter("id"));
+                alumnosDao.eliminarAlumno(id);
+                dispatcher = request.getRequestDispatcher(
+                        "Vistas/alumnos.jsp");
+            }           
             dispatcher.forward(request, response);
     }
 
