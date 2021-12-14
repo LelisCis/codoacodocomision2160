@@ -103,12 +103,26 @@ public class AlumnosDAO {
     public boolean eliminarAlumno(int _id){
         PreparedStatement ps;
           try{
-            ps = conexion.prepareStatement("DELETE FROM "
-                    + "participantes WHERE id=?");
+            ps = conexion.prepareStatement("DELETE FROM participantes WHERE id=?");
             ps.setInt(1,_id);
             ps.execute();
             return true;
           }catch(SQLException e){
+            System.out.println(e.toString());
+            return false;
+        }
+    }
+    public boolean ingresarUsuario(String email, String clave){
+        PreparedStatement ps;
+        ResultSet rs;
+        try{
+            ps= conexion.prepareStatement("SELECT * FROM usuarios WHERE email=?");
+            ps.setString(1,email);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                return email.equals(rs.getString("email"))&& clave.equals(rs.getString("password"));
+            }return false;
+        }catch(SQLException e){
             System.out.println(e.toString());
             return false;
         }
