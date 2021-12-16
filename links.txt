@@ -1,2 +1,13 @@
 código javascript clase 6
 https://pastebin.com/M1j3924U
+Pasos para hacer el deploy en heroku
+
+comandos 
+
+instalar heroku cli 
+https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+
+heroku login 
+
+heroku plugins:install heroku-cli-deploy
+heroku war:deploy target/nombrearchivo.war --app nomb_aplicacion
